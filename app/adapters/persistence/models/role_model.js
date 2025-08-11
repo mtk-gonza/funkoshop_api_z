@@ -1,30 +1,32 @@
 import { DataTypes } from 'sequelize';
 import { sequelize } from './../../../core/config/database.js';
 
-export const Category = sequelize.define('Category', {
+export const Role = sequelize.define('Role', {
     id: {
-        type: DataTypes.INTEGER(11),
+        type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
     name: {
-        type: DataTypes.STRING(60),
-        allowNull: false,
-        unique: true
+        type: DataTypes.STRING,
+        unique: true,
+        allowNull: false
     },
     description: {
-        type: DataTypes.STRING(255),
-        allowNull: false
+        type: DataTypes.TEXT,
+        allowNull: true
     },
     created_at: {
         type: DataTypes.DATE,
+        allowNull: false,
         defaultValue: DataTypes.NOW
     },
     updated_at: {
         type: DataTypes.DATE,
+        allowNull: false,
         defaultValue: DataTypes.NOW
     }
 }, {
-    tableName: 'categories', 
-    timestamps: true
+    tableName: 'roles',
+    timestamps: false
 });
