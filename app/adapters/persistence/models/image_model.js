@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize';
-import { sequelize } from './../../../core/config/database.js';
+import { sequelize } from './../../../config/database.js';
 
-export const Image = sequelize.define('Image', {
+export const ImageModel = sequelize.define('Image', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,

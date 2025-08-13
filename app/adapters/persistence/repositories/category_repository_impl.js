@@ -1,6 +1,6 @@
 import { CategoryRepositoryPort } from './../../../core/ports/category_repository_port.js';
 import { CategoryModel } from './../models/category_model.js';
-import { Category } from '../../../core/entities/category_entity.js';
+import { Category } from './../../../core/entities/category_entity.js';
 
 export class CategoryRepositoryImpl extends CategoryRepositoryPort {
     constructor() {

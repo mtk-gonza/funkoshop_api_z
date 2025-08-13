@@ -1,42 +1,42 @@
-import { Product } from './product_model.js';
-import { ProductSpecification } from './product_spec_model.js';
-import { Licence } from './licence_model.js';
-import { Category } from './category_model.js';
-import { Image } from './image_model.js';
-import { User } from './user_model.js';
-import { Role } from './role_model.js';
-import { user_roles } from './user_roles_model.js';
+import { ProductModel } from './product_model.js';
+import { ProductSpecificationModel } from './product_spec_model.js';
+import { LicenceModel } from './licence_model.js';
+import { CategoryModel } from './category_model.js';
+import { ImageModel } from './image_model.js';
+import { UserModel } from './user_model.js';
+import { RoleModel } from './role_model.js';
+import { UserRolesModel } from './user_roles_model.js';
 
-Product.hasMany(ProductSpecification, {
+ProductModel.hasMany(ProductSpecificationModel, {
     foreignKey: 'product_id',
     as: 'specifications'
 });
 
-ProductSpecification.belongsTo(Product, {
+ProductSpecificationModel.belongsTo(ProductModel, {
     foreignKey: 'product_id',
     as: 'product'
 });
 
-Product.belongsTo(Licence, {
+ProductModel.belongsTo(LicenceModel, {
     foreignKey: 'licence_id',
     as: 'licence'
 });
-Licence.hasMany(Product, {
+LicenceModel.hasMany(ProductModel, {
     foreignKey: 'licence_id',
     as: 'products'
 });
 
-Product.belongsTo(Category, {
+ProductModel.belongsTo(CategoryModel, {
     foreignKey: 'category_id',
     as: 'category'
 });
 
-Category.hasMany(Product, {
+CategoryModel.hasMany(ProductModel, {
     foreignKey: 'category_id',
     as: 'products'
 });
 
-Product.hasMany(Image, {
+ProductModel.hasMany(ImageModel, {
     foreignKey: 'entity_id',
     as: 'images',
     scope: {
@@ -45,7 +45,7 @@ Product.hasMany(Image, {
     constraints: false
 });
 
-Licence.hasMany(Image, {
+LicenceModel.hasMany(ImageModel, {
     foreignKey: 'entity_id',
     as: 'images',
     scope: {
@@ -54,15 +54,15 @@ Licence.hasMany(Image, {
     constraints: false
 });
 
-Role.belongsToMany(User, {
-    through: user_roles,
+RoleModel.belongsToMany(UserModel, {
+    through: UserRolesModel,
     as: 'users',
     foreignKey: 'role_id',
     otherKey: 'user_id'
 });
 
-User.belongsToMany(Role, {
-    through: user_roles,
+UserModel.belongsToMany(RoleModel, {
+    through: UserRolesModel,
     as: 'roles',
     foreignKey: 'user_id',
     otherKey: 'role_id'

@@ -1,6 +1,6 @@
 import { ImageType } from './../../core/enums/image_type.js';
 
-const PRODUCTS = [
+export const PRODUCTS = [
     {
         name: 'Baby Yoda Blueball',
         description: 'Figura coleccionable de Baby Yoda (Grogu) - The Mandalorian Saga, edición limitada.',

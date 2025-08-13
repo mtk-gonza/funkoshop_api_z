@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize';
-import { sequelize } from './../../../core/config/database.js';
+import { sequelize } from './../../../config/database.js';
 
-export const user_roles = sequelize.define('user_roles', {
+export const UserRolesModel = sequelize.define('user_roles', {
     user_id: {
         type: DataTypes.INTEGER,
         primaryKey: true,

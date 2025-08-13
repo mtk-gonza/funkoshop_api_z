@@ -1,6 +1,6 @@
 import { ImageType } from './../../core/enums/image_type.js';
 
-const LICENCES = [
+export const LICENCES = [
     {
         name: 'Pokemon',
         description: 'Atrapa todos los que puedas y disfruta de una colección llena de amigos.',

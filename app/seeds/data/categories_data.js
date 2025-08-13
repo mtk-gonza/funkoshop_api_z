@@ -1,4 +1,4 @@
-const CATEGORIES = [
+export const CATEGORIES = [
     {
         name: 'funkos',
         description: 'Funko Pop collectible figures'

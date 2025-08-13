@@ -1,6 +1,6 @@
 import { RoleType } from './../../core/enums/role_type';
 
-const ROLES = [
+export const ROLES = [
     {
         name: RoleType.ROOT,
         description: 'System Administrator and all permissions'
