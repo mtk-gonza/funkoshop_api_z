@@ -14,6 +14,7 @@ funkoshop_api_z/
 │   │   │
 │   │   └── persistence/                # Salida: base de datos, storage, etc.
 │   │       ├── models/                 # Modelos ORM Sequelize
+│   │       │   ├── associations.js
 │   │       │   ├── category_model.js
 │   │       │   ├── image_model.js
 │   │       │   ├── licence_model.js
@@ -31,11 +32,12 @@ funkoshop_api_z/
 │   │           ├── product_spec_repository_impl.js
 │   │           ├── role_repository_impl.js
 │   │           └── user_repository_impl.js
+│   │ 
+│   ├── config/                         # Configuración general
+│   │   ├── settings.js                 # Variables de entorno y config
+│   │   └── database.js                 # Sequelize, connectDB, createTables
 │   │  
 │   ├── core/                           # Núcleo (dominio, casos de uso, puertos)
-│   │   ├── config/                     # Configuración general
-│   │   │   ├── settings.js             # Variables de entorno y config
-│   │   │   └── database.js             # Engine, session, Base, get_db()
 │   │   │
 │   │   ├── entities/                   # Entidades del dominio (sin ORM)
 │   │   │   ├── category_entity.js
@@ -46,7 +48,7 @@ funkoshop_api_z/
 │   │   │   ├── user_entity.js
 │   │   │   └── role_entity.js
 │   │   │
-│   │   ├── enums/                      
+│   │   ├── enums/                      # Simulando emun con Object.freeze                      
 │   │   │   ├── entity_type.js
 │   │   │   ├── image_type.js
 │   │   │   └── role_type.js
@@ -62,13 +64,13 @@ funkoshop_api_z/
 │   │   │   └── user_exceptions.js
 │   │   │
 │   │   ├── ports/                      # Puertos (interfaces de repositorios, servicios, etc.)
-│   │   │   ├── category_repository.js
-│   │   │   ├── image_repository.js
-│   │   │   ├── licence_repository.js
-│   │   │   ├── product_repository.js
-│   │   │   ├── product_spec_repository.js
-│   │   │   ├── role_repository.js
-│   │   │   └── user_repository.js
+│   │   │   ├── category_repository_port.js
+│   │   │   ├── image_repository_port.js
+│   │   │   ├── licence_repository_port.js
+│   │   │   ├── product_repository_port.js
+│   │   │   ├── product_spec_repository_port.js
+│   │   │   ├── role_repository_port.js
+│   │   │   └── user_repository_port.js
 │   │   │
 │   │   ├── use_cases/                  # Casos de uso (lógica de negocio)
 │   │   │   ├── auth_use_cases.js
@@ -82,6 +84,7 @@ funkoshop_api_z/
 │   │   │
 │   │   └── utils/                  
 │   │       ├── jwt_handler.js
+│   │       ├── logger.js
 │   │       ├── password_utils.js
 │   │       └── role_handler.js
 │   │
@@ -114,5 +117,10 @@ funkoshop_api_z/
 │
 ├── uploads/ 
 │
+├── .env                                # Variables de entorno
+├── .gitignore
 ├── main.js                             # Punto de entrada (crea APP, incluye routers, etc.)
-└── .env                                # Variables de entorno
+├── package-lock.json
+├── package.json
+├── README.md
+└── STRUCTURE.md

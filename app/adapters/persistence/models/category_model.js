@@ -1,9 +1,9 @@
 import { DataTypes } from 'sequelize';
-import { sequelize } from './../../../core/config/database.js';
+import { sequelize } from './../../../config/database.js';
 
-export const Category = sequelize.define('Category', {
+export const CategoryModel = sequelize.define('Category', {
     id: {
-        type: DataTypes.INTEGER(11),
+        type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
