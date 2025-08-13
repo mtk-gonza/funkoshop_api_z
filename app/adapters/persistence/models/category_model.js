@@ -14,7 +14,7 @@ export const CategoryModel = sequelize.define('Category', {
     },
     description: {
         type: DataTypes.STRING(255),
-        allowNull: false
+        allowNull: true
     },
     created_at: {
         type: DataTypes.DATE,

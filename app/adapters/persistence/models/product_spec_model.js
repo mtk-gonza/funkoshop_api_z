@@ -9,7 +9,7 @@ export const ProductSpecification = sequelize.define('ProductSpecification', {
     },
     product_id: {
         type: DataTypes.INTEGER,
-        allowNull: true
+        allowNull: false
     },
     key: {
         type: DataTypes.STRING(60),
@@ -21,12 +21,10 @@ export const ProductSpecification = sequelize.define('ProductSpecification', {
     },
     created_at: {
         type: DataTypes.DATE,
-        allowNull: false,
         defaultValue: DataTypes.NOW
     },
     updated_at: {
         type: DataTypes.DATE,
-        allowNull: false,
         defaultValue: DataTypes.NOW
     }
 }, {

@@ -13,17 +13,15 @@ export const Licence = sequelize.define('Licence', {
     },
     description: {
         type: DataTypes.STRING(255),
-        allowNull: false
+        allowNull: true
     },
     created_at: {
         type: DataTypes.DATE,
-        defaultValue: DataTypes.NOW,
-        allowNull: false
+        defaultValue: DataTypes.NOW
     },
     updated_at: {
         type: DataTypes.DATE,
-        defaultValue: DataTypes.NOW,
-        allowNull: false
+        defaultValue: DataTypes.NOW
     }
 }, {
     tableName: 'licences',

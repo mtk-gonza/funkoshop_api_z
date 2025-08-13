@@ -20,7 +20,8 @@ export const Image = sequelize.define('Image', {
         allowNull: false
     },
     image_type: {
-        type: DataTypes.STRING(50)
+        type: DataTypes.STRING(50),
+        allowNull: false
     },
     is_primary: {
         type: DataTypes.BOOLEAN,

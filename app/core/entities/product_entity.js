@@ -40,4 +40,4 @@ export class Product {
     isInStock() {
         return (this.stock ?? 0) > 0;
     }
-}
+};
