@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { ImageResponseSchema } from './image_schema';
+import { ImageResponseSchema } from './image_schema.js';
 
 const LicenceBaseSchema = z.object({
     name: z.string(),

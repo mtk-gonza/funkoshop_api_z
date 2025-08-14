@@ -1,9 +1,10 @@
-# Funkoshop FastAPI
-API de ejemplo para gestión de productos, licencias, categorías y usuarios usando FastAPI y arquitectura hexagonal.
+# Funkoshop API
+API de ejemplo para gestión de productos, licencias, categorías, roles y usuarios. Usando express y sequelize en arquitectura hexagonal.
 
 ## Instalación
-1. Clona el repositorioe y renombrar:
+1. Clona el repositorio, renombrar:
    ```bash
+   cd funkoshop_api_z
    cp .env.example .env 
    ```
 2. Configurar las variables de entorno del .env

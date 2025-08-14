@@ -1,6 +1,6 @@
 import { z } from 'zod';
-import { ImageCreateSchema, ImageResponseSchema } from './image_schema';
-import { ProductSpecCreateSchema, ProductSpecResponseSchema } from './product_spec_schema';
+import { ImageCreateSchema, ImageResponseSchema } from './image_schema.js';
+import { ProductSpecCreateSchema, ProductSpecResponseSchema } from './product_spec_schema.js';
 
 const ProductBaseSchema = z.object({
     name: z.string(),

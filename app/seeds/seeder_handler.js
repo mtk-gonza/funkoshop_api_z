@@ -1,6 +1,6 @@
 import { categoriesSeeder } from './seeders/categories_seeder.js';
 import { licencesSeeder } from './seeders/licences_seeder.js';
-// import { seedProducts } from "./products_seeder.js";
+import { productsSeeder } from './seeders/products_seeder.js';
 // ... otros seeders
 
 export async function runAllSeeders() {
@@ -8,7 +8,7 @@ export async function runAllSeeders() {
 
     await categoriesSeeder();
     await licencesSeeder();
-    // await seedProducts();
+    await productsSeeder();
     // ... otros seeders
 
     console.log('All seeders finished.');

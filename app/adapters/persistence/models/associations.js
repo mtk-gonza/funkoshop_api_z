@@ -6,6 +6,7 @@ import { ImageModel } from './image_model.js';
 import { UserModel } from './user_model.js';
 import { RoleModel } from './role_model.js';
 import { UserRolesModel } from './user_roles_model.js';
+import { EntityType } from './../../../core/enums/entity_type.js';
 
 ProductModel.hasMany(ProductSpecificationModel, {
     foreignKey: 'product_id',
@@ -40,7 +41,7 @@ ProductModel.hasMany(ImageModel, {
     foreignKey: 'entity_id',
     as: 'images',
     scope: {
-        entity_type: 'product'
+        entity_type: EntityType.PRODUCT
     },
     constraints: false
 });
@@ -49,7 +50,7 @@ LicenceModel.hasMany(ImageModel, {
     foreignKey: 'entity_id',
     as: 'images',
     scope: {
-        entity_type: 'licence'
+        entity_type: EntityType.LICENCE
     },
     constraints: false
 });

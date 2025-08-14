@@ -7,7 +7,7 @@ export const LICENCES = [
         images: [
             {
                 path: 'images/pokemon/licence/pokemon_logo.webp',
-                image_type: ImageType.LOGO, // ya es "logo"
+                image_type: ImageType.LOGO,
                 is_primary: true
             }
         ]

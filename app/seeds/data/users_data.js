@@ -1,3 +1,5 @@
+import { RoleType } from './../../core/enums/role_type';
+
 export const USERS = [
     {
         username: 'root',
@@ -6,7 +8,7 @@ export const USERS = [
         first_name: 'root',
         last_name: 'root',
         phone: '91961',
-        roles: ['root', 'admin', 'editor']
+        roles: [RoleType.ROOT, RoleType.ADMIN, RoleType.EDITOR]
     },
     {
         username: 'admin',
@@ -15,7 +17,7 @@ export const USERS = [
         first_name: 'admin',
         last_name: 'admin',
         phone: '91961',
-        roles: ['admin', 'editor']
+        roles: [RoleType.ADMIN, RoleType.EDITOR]
     },
     {
         username: 'editor',
@@ -24,7 +26,7 @@ export const USERS = [
         first_name: 'editor',
         last_name: 'editor',
         phone: '91961',
-        roles: ['editor']
+        roles: [RoleType.EDITOR]
     },
     {
         username: 'user',
@@ -33,7 +35,7 @@ export const USERS = [
         first_name: 'user',
         last_name: 'user',
         phone: '91961',
-        roles: ['user']
+        roles: [RoleType.USER]
     },
     {
         username: 'guest',
@@ -42,6 +44,6 @@ export const USERS = [
         first_name: 'guest',
         last_name: 'guest',
         phone: '91961',
-        roles: ['guest']
+        roles: [RoleType.GUEST]
     }
 ];

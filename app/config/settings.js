@@ -1,5 +1,3 @@
-import 'dotenv/config';
-
 let DATABASE_URL;
 
 switch (process.env.DB_DIALECT) {
@@ -10,7 +8,7 @@ switch (process.env.DB_DIALECT) {
         DATABASE_URL = `postgres://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST || 'localhost'}:${process.env.DB_PORT || 5432}/${process.env.DB_NAME}`;
         break;
     default:
-        DATABASE_URL = `sqlite:${process.env.DB_STORAGE || './funkoshop.sqlite'}`; // formato correcto
+        DATABASE_URL = `sqlite:${process.env.DB_STORAGE || './funkoshop.sqlite'}`;
         break;
 }
 
