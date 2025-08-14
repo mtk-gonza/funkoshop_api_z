@@ -11,12 +11,12 @@ export class CategoryUseCases {
 
     async getCategoryById(id) {
         const category = await this.categoryRepository.findById(id);
-        if (!category) throw new Error("Category not found");
+        if (!category) throw new Error('Category not found');
         return category;
     }
 
     async createCategory(data) {
-        if (!data.name) throw new Error("Name is required");
+        if (!data.name) throw new Error('Name is required');
 
         const categoryEntity = new Category({
             name: data.name,
@@ -33,13 +33,13 @@ export class CategoryUseCases {
         });
 
         const updated = await this.categoryRepository.update(id, categoryEntity);
-        if (!updated) throw new Error("Category not found");
+        if (!updated) throw new Error('Category not found');
         return updated;
     }
 
     async deleteCategory(id) {
         const deleted = await this.categoryRepository.delete(id);
-        if (!deleted) throw new Error("Category not found");
+        if (!deleted) throw new Error('Category not found');
         return deleted;
     }
 }

@@ -4,16 +4,19 @@ import { CategoryRepositoryImpl } from './../../adapters/persistence/repositorie
 export async function categoriesSeeder() {
     const categoryRepo = new CategoryRepositoryImpl();
     const createdCategories = [];
-
-    for (const categoryData of CATEGORIES) {
-        try {
-            const category = await categoryRepo.create(categoryData);
-            createdCategories.push(category);
-        } catch (err) {
-            console.error(`Error creating category ${categoryData.name}: ${err.message}`);
-        }
+    const categories = await categoryRepo.findAll();
+    if (categories.length < 1) {
+        for (const categoryData of CATEGORIES) {
+            try {
+                const category = await categoryRepo.create(categoryData);
+                createdCategories.push(category);
+            } catch (err) {
+                console.error(`Error creating category ${categoryData.name}: ${err.message}`);
+            }
+        }    
+        console.log(`Seeded ${createdCategories.length} categories.`);
+        return createdCategories;
     }
-
-    console.log(`Seeded ${createdCategories.length} categories.`);
-    return createdCategories;
-};
+    console.log(`Not seeded, ${categories.length} categories already exist.`);
+    return categories
+}

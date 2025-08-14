@@ -10,73 +10,73 @@ export class CategoryRepositoryImpl extends CategoryRepositoryPort {
     async findAll() {
         const categories = await CategoryModel.findAll();
         return categories.map(
-            (c) =>
+            (category) =>
                 new Category({
-                    id: c.id,
-                    name: c.name,
-                    description: c.description,
-                    created_at: c.created_at,
-                    updated_at: c.updated_at
+                    id: category.id,
+                    name: category.name,
+                    description: category.description,
+                    created_at: category.created_at,
+                    updated_at: category.updated_at
                 })
         );
     }
 
     async findById(id) {
-        const c = await CategoryModel.findByPk(id);
-        if (!c) return null;
+        const category = await CategoryModel.findByPk(id);
+        if (!category) return null;
         return new Category({
-            id: c.id,
-            name: c.name,
-            description: c.description,
-            created_at: c.created_at,
-            updated_at: c.updated_at
+            id: category.id,
+            name: category.name,
+            description: category.description,
+            created_at: category.created_at,
+            updated_at: category.updated_at
         });
     }
 
     async create(categoryEntity) {
-        const c = await CategoryModel.create({
+        const category = await CategoryModel.create({
             name: categoryEntity.name,
             description: categoryEntity.description
         });
 
         return new Category({
-            id: c.id,
-            name: c.name,
-            description: c.description,
-            created_at: c.created_at,
-            updated_at: c.updated_at
+            id: category.id,
+            name: category.name,
+            description: category.description,
+            created_at: category.created_at,
+            updated_at: category.updated_at
         });
     }
 
     async update(id, categoryEntity) {
-        const c = await CategoryModel.findByPk(id);
-        if (!c) return null;
+        const category = await CategoryModel.findByPk(id);
+        if (!category) return null;
 
-        c.name = categoryEntity.name ?? c.name;
-        c.description = categoryEntity.description ?? c.description;
+        category.name = categoryEntity.name ?? category.name;
+        category.description = categoryEntity.description ?? category.description;
 
-        await c.save();
+        await category.save();
 
         return new Category({
-            id: c.id,
-            name: c.name,
-            description: c.description,
-            created_at: c.created_at,
-            updated_at: c.updated_at
+            id: category.id,
+            name: category.name,
+            description: category.description,
+            created_at: category.created_at,
+            updated_at: category.updated_at
         });
     }
 
     async delete(id) {
-        const c = await CategoryModel.findByPk(id);
-        if (!c) return null;
+        const category = await CategoryModel.findByPk(id);
+        if (!category) return null;
 
-        await c.destroy();
+        await category.destroy();
         return new Category({
-            id: c.id,
-            name: c.name,
-            description: c.description,
-            created_at: c.created_at,
-            updated_at: c.updated_at
+            id: category.id,
+            name: category.name,
+            description: category.description,
+            created_at: category.created_at,
+            updated_at: category.updated_at
         });
     }
 }

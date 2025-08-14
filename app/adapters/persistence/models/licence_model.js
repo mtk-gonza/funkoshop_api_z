@@ -25,5 +25,5 @@ export const LicenceModel = sequelize.define('Licence', {
     }
 }, {
     tableName: 'licences',
-    timestamps: true
+    timestamps: false
 });
