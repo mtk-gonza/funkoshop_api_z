@@ -1,36 +1,28 @@
-import { RoleRepositoryPort } from '../../../core/ports/role_repository_port.js';
-import { RoleModel } from '../models/role_model.js';
-import { Role } from '../../../core/entities/role_entity.js';
+import { RoleRepositoryPort } from './../../../core/ports/role_repository_port.js';
+import { RoleModel } from './../models/role_model.js';
+import { Role } from './../../../core/entities/role_entity.js';
 
 export class RoleRepositoryImpl extends RoleRepositoryPort {
     constructor() {
         super();
     }
-
+    #toEntity(roleInstance) {
+        return new Role ({
+            id: roleInstance.id,
+            name: roleInstance.name,
+            description: roleInstance.description,
+            created_at: roleInstance.created_at,
+            updated_at: roleInstance.updated_at
+        })
+    }
     async findAll() {
         const roles = await RoleModel.findAll();
-        return roles.map(
-            (role) =>
-                new Role({
-                    id: role.id,
-                    name: role.name,
-                    description: role.description,
-                    created_at: role.created_at,
-                    updated_at: role.updated_at
-                })
-        );
+        return roles.map(role => this.#toEntity(role));
     }
 
     async findById(id) {
         const role = await RoleModel.findByPk(id);
-        if (!role) return null;
-        return new Role({
-            id: role.id,
-            name: role.name,
-            description: role.description,
-            created_at: role.created_at,
-            updated_at: role.updated_at
-        });
+        return role ? this.#toEntity(role) : null;
     }
 
     async create(roleEntity) {
@@ -38,14 +30,7 @@ export class RoleRepositoryImpl extends RoleRepositoryPort {
             name: roleEntity.name,
             description: roleEntity.description
         });
-
-        return new Role({
-            id: role.id,
-            name: role.name,
-            description: role.description,
-            created_at: role.created_at,
-            updated_at: role.updated_at
-        });
+        return this.#toEntity(role);
     }
 
     async update(id, roleEntity) {
@@ -54,29 +39,15 @@ export class RoleRepositoryImpl extends RoleRepositoryPort {
 
         role.name = roleEntity.name ?? role.name;
         role.description = roleEntity.description ?? role.description;
-
         await role.save();
 
-        return new Role({
-            id: role.id,
-            name: role.name,
-            description: role.description,
-            created_at: role.created_at,
-            updated_at: role.updated_at
-        });
+        return this.#toEntity(role);
     }
 
     async delete(id) {
         const role = await RoleModel.findByPk(id);
         if (!role) return null;
-
         await role.destroy();
-        return new Role({
-            id: role.id,
-            name: role.name,
-            description: role.description,
-            created_at: role.created_at,
-            updated_at: role.updated_at
-        });
+        return this.#toEntity(role);
     }
 }
