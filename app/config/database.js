@@ -27,7 +27,7 @@ export async function createTables() {
         await import('./../adapters/persistence/models/image_model.js');
         await import('./../adapters/persistence/models/licence_model.js');
         await import('./../adapters/persistence/models/product_model.js');
-        await import('./../adapters/persistence/models/product_spec_model.js');
+        await import('../adapters/persistence/models/specification_model.js');
         await import('./../adapters/persistence/models/role_model.js');
         await import('./../adapters/persistence/models/user_model.js');
         await import('./../adapters/persistence/models/user_roles_model.js');

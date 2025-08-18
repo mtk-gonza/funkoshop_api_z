@@ -1,9 +1,9 @@
 import { ProductRepositoryPort } from './../../../core/ports/product_repository_port.js';
 import { ProductModel } from './../models/product_model.js';
 import { ImageModel } from './../models/image_model.js';
-import { ProductSpecificationModel } from './../models/product_spec_model.js';
+import { SpecificationModel } from '../models/specification_model.js';
 import { Product } from './../../../core/entities/product_entity.js';
-import { ProductSpec } from './../../../core/entities/product_spec_entity.js';
+import { Specification } from './../../../core/entities/specification_entity.js';
 import { Image } from './../../../core/entities/image_entity.js';
 import { EntityType } from './../../../core/enums/entity_type.js';
 
@@ -26,7 +26,7 @@ export class ProductRepositoryImpl extends ProductRepositoryPort {
             category_id: productInstance.category_id,
             created_at: productInstance.created_at,
             updated_at: productInstance.updated_at,
-            specifications: productInstance.specifications?.map(spec => new ProductSpec ({
+            specifications: productInstance.specifications?.map(spec => new Specification ({
                 id: spec.id,
                 product_id: productInstance.id,
                 key: spec.key,
@@ -49,7 +49,7 @@ export class ProductRepositoryImpl extends ProductRepositoryPort {
         const products = await ProductModel.findAll({
             include: [
                 { model: ImageModel, as: 'images'},
-                { model: ProductSpecificationModel, as: 'specifications'}
+                { model: SpecificationModel, as: 'specifications'}
             ]
         });
 
@@ -60,7 +60,7 @@ export class ProductRepositoryImpl extends ProductRepositoryPort {
         const product = await ProductModel.findByPk(id, {
             include: [
                 { model: ImageModel, as: 'images' },
-                { model: ProductSpecificationModel, as: 'specifications'}
+                { model: SpecificationModel, as: 'specifications'}
             ]
         });
         return product ? this.#toEntity(product) : null;
@@ -83,7 +83,7 @@ export class ProductRepositoryImpl extends ProductRepositoryPort {
         if (productEntity.specifications?.length) {
             specifications = await Promise.all(
                 productEntity.specifications.map(spec =>
-                    ProductSpecificationModel.create({
+                    SpecificationModel.create({
                         product_id: productEntity.id,
                         key: spec.key,
                         value: spec.value
@@ -114,7 +114,7 @@ export class ProductRepositoryImpl extends ProductRepositoryPort {
         const product = await ProductModel.findByPk(id, {
             include: [
                 { model: ImageModel, as: 'images' },
-                { model: ProductSpecificationModel, as: 'specifications'}
+                { model: SpecificationModel, as: 'specifications'}
             ]
         });
         if (!product) return null;
@@ -147,12 +147,12 @@ export class ProductRepositoryImpl extends ProductRepositoryPort {
             product.images = newImages;
         }
         if (productEntity.specifications) {
-            await ProductSpecificationModel.destroy({
+            await SpecificationModel.destroy({
                 where: { product_id: id}
             });
             const newProductSpecs = await Promise.all(
                 productEntity.specifications.map(spec =>
-                    ProductSpecificationModel.create({
+                    SpecificationModel.create({
                         product_id: id,
                         key: spec.key,
                         value: spec.value
@@ -170,7 +170,7 @@ export class ProductRepositoryImpl extends ProductRepositoryPort {
         await ImageModel.destroy({
             where: { entity_id: id, entity_type: EntityType.PRODUCT }
         });
-        await ProductSpecificationModel.destroy({
+        await SpecificationModel.destroy({
             where: { product_id: id}
         });
         await product.destroy();

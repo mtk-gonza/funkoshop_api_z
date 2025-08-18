@@ -1,4 +1,4 @@
-export class ProductSpecRepositoryPort {
+export class SpecificationPort {
     async findAll() {
         throw new Error('Method not implemented');
     }

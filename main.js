@@ -5,6 +5,7 @@ import settings from './app/config/settings.js';
 import categoryRouter from './app/adapters/api/routers/category_router.js';
 import licenceRouter from './app/adapters/api/routers/licence_router.js';
 import productRouter from './app/adapters/api/routers/product_router.js';
+import specificationRouter from './app/adapters/api/routers/specification_router.js';
 import roleRouter from './app/adapters/api/routers/role_router.js';
 //import userRouter from './app/adapters/api/routers/user_router.js';
 
@@ -25,6 +26,7 @@ app.use(cors());
 app.use('/api/categories', categoryRouter);
 app.use('/api/licences', licenceRouter);
 app.use('/api/products', productRouter);
+app.use('/api/specifications', specificationRouter);
 app.use('/api/roles', roleRouter);
 //app.use('/api/users', userRouter);
 

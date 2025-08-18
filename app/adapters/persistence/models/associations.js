@@ -1,5 +1,5 @@
 import { ProductModel } from './product_model.js';
-import { ProductSpecificationModel } from './product_spec_model.js';
+import { SpecificationModel } from './specification_model.js';
 import { LicenceModel } from './licence_model.js';
 import { CategoryModel } from './category_model.js';
 import { ImageModel } from './image_model.js';
@@ -8,12 +8,12 @@ import { RoleModel } from './role_model.js';
 import { UserRolesModel } from './user_roles_model.js';
 import { EntityType } from './../../../core/enums/entity_type.js';
 
-ProductModel.hasMany(ProductSpecificationModel, {
+ProductModel.hasMany(SpecificationModel, {
     foreignKey: 'product_id',
     as: 'specifications'
 });
 
-ProductSpecificationModel.belongsTo(ProductModel, {
+SpecificationModel.belongsTo(ProductModel, {
     foreignKey: 'product_id',
     as: 'product'
 });

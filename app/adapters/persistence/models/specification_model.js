@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize';
-import { sequelize } from './../../../config/database.js';
+import { sequelize } from '../../../config/database.js';
 
-export const ProductSpecificationModel = sequelize.define('ProductSpecification', {
+export const SpecificationModel = sequelize.define('Specification', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -28,6 +28,6 @@ export const ProductSpecificationModel = sequelize.define('ProductSpecification'
         defaultValue: DataTypes.NOW
     }
 }, {
-    tableName: 'product_specifications',
+    tableName: 'specifications',
     timestamps: false
 });

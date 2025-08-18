@@ -1,4 +1,4 @@
-export class ProductSpec {
+export class Specification {
     constructor({ 
         id = null, 
         product_id, 
