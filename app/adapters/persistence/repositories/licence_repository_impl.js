@@ -33,7 +33,6 @@ export class LicenceRepositoryImpl extends LicenceRepositoryPort {
         const licences = await LicenceModel.findAll({
             include: [{ model: ImageModel, as: 'images'}]
         });
-
         return licences.map(licence => this.#toEntity(licence));
     }
 

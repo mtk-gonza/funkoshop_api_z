@@ -1,0 +1,14 @@
+{
+    "development": {
+        "dialect": "sqlite",
+        "storage": "funkoshop.sqlite"
+    },
+    "test": {
+        "dialect": "sqlite",
+        "storage": "funkoshop_test.sqlite"
+    },
+    "production": {
+        "dialect": "sqlite",
+        "storage": "funkoshop_prod.sqlite"
+    }
+}

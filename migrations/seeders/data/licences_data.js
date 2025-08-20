@@ -1,4 +1,5 @@
-import { ImageType } from './../../core/enums/image_type.js';
+import { ImageType } from './../../../app/core/enums/image_type.js';
+import { EntityType } from './../../../app/core/enums/entity_type.js';
 
 export const LICENCES = [
     {
@@ -7,10 +8,15 @@ export const LICENCES = [
         images: [
             {
                 path: 'images/pokemon/licence/pokemon_logo.webp',
+                entity_type: EntityType.LICENCE,
                 image_type: ImageType.LOGO,
-                is_primary: true
+                is_primary: true,
+                created_at: new Date(),
+                updated_at: new Date()
             }
-        ]
+        ],
+        created_at: new Date(),
+        updated_at: new Date()
     },
     {
         name: 'Star Wars',
@@ -18,10 +24,15 @@ export const LICENCES = [
         images: [
             {
                 path: 'images/star-wars/licence/star-wars_logo.webp',
+                entity_type: EntityType.LICENCE,
                 image_type: ImageType.LOGO,
-                is_primary: true
+                is_primary: true,
+                created_at: new Date(),
+                updated_at: new Date()
             }
-        ]
+        ],
+        created_at: new Date(),
+        updated_at: new Date()
     },
     {
         name: 'Harry Potter',
@@ -29,10 +40,15 @@ export const LICENCES = [
         images: [
             {
                 path: 'images/harry-potter/licence/harry-potter_logo.webp',
+                entity_type: EntityType.LICENCE,
                 image_type: ImageType.LOGO,
-                is_primary: true
+                is_primary: true,
+                created_at: new Date(),
+                updated_at: new Date()
             }
-        ]
+        ],
+        created_at: new Date(),
+        updated_at: new Date()
     },
     {
         name: 'Naruto',
@@ -40,10 +56,15 @@ export const LICENCES = [
         images: [
             {
                 path: 'images/Naruto/licence/naruto_logo.webp',
+                entity_type: EntityType.LICENCE,
                 image_type: ImageType.LOGO,
-                is_primary: true
+                is_primary: true,
+                created_at: new Date(),
+                updated_at: new Date()
             }
-        ]
+        ],
+        created_at: new Date(),
+        updated_at: new Date()
     },
     {
         name: 'Dragon Ball',
@@ -51,9 +72,14 @@ export const LICENCES = [
         images: [
             {
                 path: 'images/dragon-ball/licence/dragon-ball_logo.webp',
+                entity_type: EntityType.LICENCE,
                 image_type: ImageType.LOGO,
-                is_primary: true
+                is_primary: true,
+                created_at: new Date(),
+                updated_at: new Date()
             }
-        ]
+        ],
+        created_at: new Date(),
+        updated_at: new Date()
     }
 ];

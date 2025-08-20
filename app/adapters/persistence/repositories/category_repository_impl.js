@@ -6,31 +6,24 @@ export class CategoryRepositoryImpl extends CategoryRepositoryPort {
     constructor() {
         super();
     }
+    #toEntity(categoryInstance) {
+        return new Category({
+            id: categoryInstance.id,
+            name: categoryInstance.name,
+            description: categoryInstance.description,
+            created_at: categoryInstance.created_at,
+            updated_at: categoryInstance.updated_at
+        });
+    }
 
     async findAll() {
         const categories = await CategoryModel.findAll();
-        return categories.map(
-            (category) =>
-                new Category({
-                    id: category.id,
-                    name: category.name,
-                    description: category.description,
-                    created_at: category.created_at,
-                    updated_at: category.updated_at
-                })
-        );
+        return categories.map(category => this.#toEntity(category));
     }
 
     async findById(id) {
         const category = await CategoryModel.findByPk(id);
-        if (!category) return null;
-        return new Category({
-            id: category.id,
-            name: category.name,
-            description: category.description,
-            created_at: category.created_at,
-            updated_at: category.updated_at
-        });
+        return category ? this.#toEntity(category) : null;
     }
 
     async create(categoryEntity) {
@@ -38,14 +31,7 @@ export class CategoryRepositoryImpl extends CategoryRepositoryPort {
             name: categoryEntity.name,
             description: categoryEntity.description
         });
-
-        return new Category({
-            id: category.id,
-            name: category.name,
-            description: category.description,
-            created_at: category.created_at,
-            updated_at: category.updated_at
-        });
+        return this.#toEntity(category);
     }
 
     async update(id, categoryEntity) {
@@ -54,29 +40,15 @@ export class CategoryRepositoryImpl extends CategoryRepositoryPort {
 
         category.name = categoryEntity.name ?? category.name;
         category.description = categoryEntity.description ?? category.description;
-
         await category.save();
 
-        return new Category({
-            id: category.id,
-            name: category.name,
-            description: category.description,
-            created_at: category.created_at,
-            updated_at: category.updated_at
-        });
+        return this.#toEntity(category);
     }
 
     async delete(id) {
         const category = await CategoryModel.findByPk(id);
         if (!category) return null;
-
         await category.destroy();
-        return new Category({
-            id: category.id,
-            name: category.name,
-            description: category.description,
-            created_at: category.created_at,
-            updated_at: category.updated_at
-        });
+        return this.#toEntity(category);
     }
 }

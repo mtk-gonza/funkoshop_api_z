@@ -1,4 +1,5 @@
-import { ImageType } from './../../core/enums/image_type.js';
+import { ImageType } from './../../../app/core/enums/image_type.js';
+import { EntityType } from './../../../app/core/enums/entity_type.js';
 
 export const PRODUCTS = [
     {
@@ -15,15 +16,23 @@ export const PRODUCTS = [
         images: [
             {
                 path: 'images/star-wars/funkos/baby-yoda-blueball_front.webp',
+                entity_type: EntityType.PRODUCT,
                 image_type: ImageType.FRONT,
-                is_primary: true
+                is_primary: true,
+                created_at: new Date(),
+                updated_at: new Date()
             },
             {
                 path: 'images/star-wars/funkos/baby-yoda-blueball_back.webp',
+                entity_type: EntityType.PRODUCT,
                 image_type: ImageType.BACK,
-                is_primary: false
+                is_primary: false,
+                created_at: new Date(),
+                updated_at: new Date()
             }
-        ]
+        ],
+        created_at: new Date(),
+        updated_at: new Date()
     },
     {
         name: 'Luke Skylwalker & Grogu',
@@ -39,15 +48,23 @@ export const PRODUCTS = [
         images: [
             {
                 path: 'images/star-wars/funkos/luke-skylwalker-&-grogu_front.webp',
+                entity_type: EntityType.PRODUCT,
                 image_type: ImageType.FRONT,
-                is_primary: true
+                is_primary: true,
+                created_at: new Date(),
+                updated_at: new Date()
             },
             {
                 path: 'images/star-wars/funkos/luke-skylwalker-&-grogu_back.webp',
+                entity_type: EntityType.PRODUCT,
                 image_type: ImageType.BACK,
-                is_primary: false
+                is_primary: false,
+                created_at: new Date(),
+                updated_at: new Date()
             }
-        ]
+        ],
+        created_at: new Date(),
+        updated_at: new Date()
     },
     {
         name: 'Stormtrooper Lightsaber',
@@ -63,15 +80,23 @@ export const PRODUCTS = [
         images: [
             {
                 path: 'images/star-wars/funkos/stormtrooper-lightsaber_front.webp',
+                entity_type: EntityType.PRODUCT,
                 image_type: ImageType.FRONT,
-                is_primary: true
+                is_primary: true,
+                created_at: new Date(),
+                updated_at: new Date()
             },
             {
                 path: 'images/star-wars/funkos/stormtrooper-lightsaber_back.webp',
+                entity_type: EntityType.PRODUCT,
                 image_type: ImageType.BACK,
-                is_primary: false
+                is_primary: false,
+                created_at: new Date(),
+                updated_at: new Date()
             }
-        ]
+        ],
+        created_at: new Date(),
+        updated_at: new Date()
     },
     {
         name: 'Charmander Smiley',
@@ -87,15 +112,23 @@ export const PRODUCTS = [
         images: [
             {
                 path: 'images/pokemon/funkos/charmander-smiley_front.webp',
+                entity_type: EntityType.PRODUCT,
                 image_type: ImageType.FRONT,
-                is_primary: true
+                is_primary: true,
+                created_at: new Date(),
+                updated_at: new Date()
             },
             {
                 path: 'images/pokemon/funkos/charmander-smiley_back.webp',
+                entity_type: EntityType.PRODUCT,
                 image_type: ImageType.BACK,
-                is_primary: false
+                is_primary: false,
+                created_at: new Date(),
+                updated_at: new Date()
             }
-        ]
+        ],
+        created_at: new Date(),
+        updated_at: new Date()
     },
     {
         name: 'Dragonite Hi!',
@@ -111,15 +144,23 @@ export const PRODUCTS = [
         images: [
             {
                 path: 'images/pokemon/funkos/dragonite-hi!_front.webp',
+                entity_type: EntityType.PRODUCT,
                 image_type: ImageType.FRONT,
-                is_primary: true
+                is_primary: true,
+                created_at: new Date(),
+                updated_at: new Date()
             },
             {
                 path: 'images/pokemon/funkos/dragonite-hi!_back.webp',
+                entity_type: EntityType.PRODUCT,
                 image_type: ImageType.BACK,
-                is_primary: false
+                is_primary: false,
+                created_at: new Date(),
+                updated_at: new Date()
             }
-        ]
+        ],
+        created_at: new Date(),
+        updated_at: new Date()
     },
     {
         name: 'Pidgeotto Flying',
@@ -135,15 +176,23 @@ export const PRODUCTS = [
         images: [
             {
                 path: 'images/pokemon/funkos/pidgeotto-flying_front.webp',
+                entity_type: EntityType.PRODUCT,
                 image_type: ImageType.FRONT,
-                is_primary: true
+                is_primary: true,
+                created_at: new Date(),
+                updated_at: new Date()
             },
             {
                 path: 'images/pokemon/funkos/pidgeotto-flying_back.webp',
+                entity_type: EntityType.PRODUCT,
                 image_type: ImageType.BACK,
-                is_primary: false
+                is_primary: false,
+                created_at: new Date(),
+                updated_at: new Date()
             }
-        ]
+        ],
+        created_at: new Date(),
+        updated_at: new Date()
     },
     {
         name: 'Pikachu Smiley',
@@ -159,15 +208,23 @@ export const PRODUCTS = [
         images: [
             {
                 path: 'images/pokemon/funkos/pikachu-smiley_front.webp',
+                entity_type: EntityType.PRODUCT,
                 image_type: ImageType.FRONT,
-                is_primary: true
+                is_primary: true,
+                created_at: new Date(),
+                updated_at: new Date()
             },
             {
                 path: 'images/pokemon/funkos/pikachu-smiley_back.webp',
+                entity_type: EntityType.PRODUCT,
                 image_type: ImageType.BACK,
-                is_primary: false
+                is_primary: false,
+                created_at: new Date(),
+                updated_at: new Date()
             }
-        ]
+        ],
+        created_at: new Date(),
+        updated_at: new Date()
     },
     {
         name: 'Vulpix Fancy',
@@ -183,15 +240,23 @@ export const PRODUCTS = [
         images: [
             {
                 path: 'images/pokemon/funkos/vulpix-fancy_front.webp',
+                entity_type: EntityType.PRODUCT,
                 image_type: ImageType.FRONT,
-                is_primary: true
+                is_primary: true,
+                created_at: new Date(),
+                updated_at: new Date()
             },
             {
                 path: 'images/pokemon/funkos/vulpix-fancy_back.webp',
+                entity_type: EntityType.PRODUCT,
                 image_type: ImageType.BACK,
-                is_primary: false
+                is_primary: false,
+                created_at: new Date(),
+                updated_at: new Date()
             }
-        ]
+        ],
+        created_at: new Date(),
+        updated_at: new Date()
     },
     {
         name: 'Harry Potter & Hegwid',
@@ -207,15 +272,23 @@ export const PRODUCTS = [
         images: [
             {
                 path: 'images/harry-potter/funkos/harry-Potter-&-hegwid_front.webp',
+                entity_type: EntityType.PRODUCT,
                 image_type: ImageType.FRONT,
-                is_primary: true
+                is_primary: true,
+                created_at: new Date(),
+                updated_at: new Date()
             },
             {
                 path: 'images/harry-potter/funkos/harry-Potter-&-hegwid_back.webp',
+                entity_type: EntityType.PRODUCT,
                 image_type: ImageType.BACK,
-                is_primary: false
+                is_primary: false,
+                created_at: new Date(),
+                updated_at: new Date()
             }
-        ]
+        ],
+        created_at: new Date(),
+        updated_at: new Date()
     },
     {
         name: 'Kakashi Hatake Shippuden',
@@ -231,15 +304,23 @@ export const PRODUCTS = [
         images: [
             {
                 path: 'images/naruto/funkos/kakashi-hatake-shippuden_front.webp',
+                entity_type: EntityType.PRODUCT,
                 image_type: ImageType.FRONT,
-                is_primary: true
+                is_primary: true,
+                created_at: new Date(),
+                updated_at: new Date()
             },
             {
                 path: 'images/naruto/funkos/kakashi-hatake-shippuden_back.webp',
+                entity_type: EntityType.PRODUCT,
                 image_type: ImageType.BACK,
-                is_primary: false
+                is_primary: false,
+                created_at: new Date(),
+                updated_at: new Date()
             }
-        ]
+        ],
+        created_at: new Date(),
+        updated_at: new Date()
     },
     {
         name: 'Harry Potter',
@@ -255,15 +336,23 @@ export const PRODUCTS = [
         images: [
             {
                 path: 'images/harry-potter/t-shirts/harry-potter_front.webp',
+                entity_type: EntityType.PRODUCT,
                 image_type: ImageType.FRONT,
-                is_primary: true
+                is_primary: true,
+                created_at: new Date(),
+                updated_at: new Date()
             },
             {
                 path: 'images/harry-potter/t-shirts/harry-potter_back.webp',
+                entity_type: EntityType.PRODUCT,
                 image_type: ImageType.BACK,
-                is_primary: false
+                is_primary: false,
+                created_at: new Date(),
+                updated_at: new Date()
             }
-        ]
+        ],
+        created_at: new Date(),
+        updated_at: new Date()
     },
     {
         name: 'Goku with Kamehameha',
@@ -279,14 +368,22 @@ export const PRODUCTS = [
         images: [
             {
                 path: 'images/dragon-ball/keychains/goku-with-kamehameha_front.webp',
+                entity_type: EntityType.PRODUCT,
                 image_type: ImageType.FRONT,
-                is_primary: true
+                is_primary: true,
+                created_at: new Date(),
+                updated_at: new Date()
             },
             {
                 path: 'images/dragon-ball/keychains/goku-with-kamehameha_back.webp',
+                entity_type: EntityType.PRODUCT,
                 image_type: ImageType.BACK,
-                is_primary: false
+                is_primary: false,
+                created_at: new Date(),
+                updated_at: new Date()
             }
-        ]
+        ],
+        created_at: new Date(),
+        updated_at: new Date()
     }
 ];

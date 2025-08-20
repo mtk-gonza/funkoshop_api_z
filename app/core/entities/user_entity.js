@@ -8,6 +8,7 @@ export class User {
         last_name,
         phone = null,
         is_active,
+        roles = [],
         created_at = null,
         updated_at = null, 
     }) {
@@ -19,6 +20,7 @@ export class User {
         this.last_name = last_name;
         this.phone = phone;
         this.is_active = is_active;
+        this.roles = roles;
         this.created_at = created_at;
         this.updated_at = updated_at;
     }

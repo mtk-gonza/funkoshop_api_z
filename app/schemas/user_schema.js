@@ -11,7 +11,7 @@ export const UserBaseSchema = z.object({
 });
 
 export const UserCreateSchema = UserBaseSchema.extend({
-    password: z.string(),
+    password: z.string().min(6),
 });
 
 export const UserUpdateSchema = z.object({
@@ -26,7 +26,7 @@ export const UserUpdateSchema = z.object({
 
 export const UserResponseSchema = UserBaseSchema.extend({
     id: z.number(),
-    roles: z.array(RoleResponseSchema).default([]),
+    roles: z.array(RoleResponseSchema).nullable().default([]),
     created_at: z.date(),
     updated_at: z.date(),
 });

@@ -27,13 +27,13 @@ export async function createTables() {
         await import('./../adapters/persistence/models/image_model.js');
         await import('./../adapters/persistence/models/licence_model.js');
         await import('./../adapters/persistence/models/product_model.js');
-        await import('../adapters/persistence/models/specification_model.js');
+        await import('./../adapters/persistence/models/specification_model.js');
         await import('./../adapters/persistence/models/role_model.js');
         await import('./../adapters/persistence/models/user_model.js');
         await import('./../adapters/persistence/models/user_roles_model.js');
         await import('./../adapters/persistence/models/associations.js');
 
-        await sequelize.sync({ alter: true });
+        await sequelize.sync({ alter: false });
         console.log('✅ Tablas creadas o actualizadas.');
     } catch (error) {
         console.error('❌ Error creando tablas:', error.message);

@@ -1,4 +1,4 @@
-import { RoleType } from './../../core/enums/role_type';
+import { RoleType } from './../../../app/core/enums/role_type.js';
 
 export const USERS = [
     {
@@ -8,7 +8,9 @@ export const USERS = [
         first_name: 'root',
         last_name: 'root',
         phone: '91961',
-        roles: [RoleType.ROOT, RoleType.ADMIN, RoleType.EDITOR]
+        roles: [RoleType.ROOT, RoleType.ADMIN, RoleType.EDITOR],
+        created_at: new Date(),
+        updated_at: new Date()
     },
     {
         username: 'admin',
@@ -17,7 +19,9 @@ export const USERS = [
         first_name: 'admin',
         last_name: 'admin',
         phone: '91961',
-        roles: [RoleType.ADMIN, RoleType.EDITOR]
+        roles: [RoleType.ADMIN, RoleType.EDITOR],
+        created_at: new Date(),
+        updated_at: new Date()
     },
     {
         username: 'editor',
@@ -26,7 +30,9 @@ export const USERS = [
         first_name: 'editor',
         last_name: 'editor',
         phone: '91961',
-        roles: [RoleType.EDITOR]
+        roles: [RoleType.EDITOR],
+        created_at: new Date(),
+        updated_at: new Date()
     },
     {
         username: 'user',
@@ -35,7 +41,9 @@ export const USERS = [
         first_name: 'user',
         last_name: 'user',
         phone: '91961',
-        roles: [RoleType.USER]
+        roles: [RoleType.USER],
+        created_at: new Date(),
+        updated_at: new Date()
     },
     {
         username: 'guest',
@@ -44,6 +52,8 @@ export const USERS = [
         first_name: 'guest',
         last_name: 'guest',
         phone: '91961',
-        roles: [RoleType.GUEST]
+        roles: [RoleType.GUEST],
+        created_at: new Date(),
+        updated_at: new Date()
     }
 ];

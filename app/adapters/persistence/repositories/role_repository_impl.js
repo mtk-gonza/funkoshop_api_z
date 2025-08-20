@@ -25,6 +25,19 @@ export class RoleRepositoryImpl extends RoleRepositoryPort {
         return role ? this.#toEntity(role) : null;
     }
 
+    async findByNames(names) {
+        const roles =  await RoleModel.findAll({
+            where: {
+                name: names
+            }
+        });
+        return roles.map(role => ({
+            id: role.id,
+            name: role.name,
+            description: role.description
+        }));
+    }
+
     async create(roleEntity) {
         const role = await RoleModel.create({
             name: roleEntity.name,

@@ -55,16 +55,16 @@ LicenceModel.hasMany(ImageModel, {
     constraints: false
 });
 
-RoleModel.belongsToMany(UserModel, {
-    through: UserRolesModel,
-    as: 'users',
-    foreignKey: 'role_id',
-    otherKey: 'user_id'
-});
-
 UserModel.belongsToMany(RoleModel, {
     through: UserRolesModel,
     as: 'roles',
     foreignKey: 'user_id',
     otherKey: 'role_id'
+});
+
+RoleModel.belongsToMany(UserModel, {
+    through: UserRolesModel,
+    as: 'users',
+    foreignKey: 'role_id',
+    otherKey: 'user_id'
 });
