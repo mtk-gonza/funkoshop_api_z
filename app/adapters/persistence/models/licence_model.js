@@ -1,29 +1,10 @@
-import { DataTypes } from 'sequelize';
+import { mapperColumns } from './../../../core/utils/mapper_columns.js';
+import { LICENCE_COLUMNS } from './../columns/licence_columns.js';
 import { sequelize } from './../../../config/database.js';
 
-export const LicenceModel = sequelize.define('Licence', {
-    id: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true
-    },
-    name: {
-        type: DataTypes.STRING(60),
-        allowNull: false
-    },
-    description: {
-        type: DataTypes.STRING(255),
-        allowNull: true
-    },
-    created_at: {
-        type: DataTypes.DATE,
-        defaultValue: DataTypes.NOW
-    },
-    updated_at: {
-        type: DataTypes.DATE,
-        defaultValue: DataTypes.NOW
-    }
-}, {
+const mappedColumns = mapperColumns(LICENCE_COLUMNS);
+
+export const LicenceModel = sequelize.define('Licence', mappedColumns, {
     tableName: 'licences',
     timestamps: false
 });
