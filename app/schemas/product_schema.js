@@ -35,3 +35,8 @@ export const ProductResponseSchema = ProductBaseSchema.extend({
     created_at: z.date(),
     updated_at: z.date()
 });
+
+export const ProductDeleteResponseSchema = z.object({
+    success: z.boolean(),
+    detail: z.string(),
+});

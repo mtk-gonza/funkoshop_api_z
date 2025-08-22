@@ -22,3 +22,8 @@ export const ImageResponseSchema = ImageBaseSchema.extend({
     created_at: z.date(),
     updated_at: z.date()
 });
+
+export const ImageDeleteResponseSchema = z.object({
+    success: z.boolean(),
+    detail: z.string(),
+});

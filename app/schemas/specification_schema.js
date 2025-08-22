@@ -19,3 +19,8 @@ export const SpecificationResponseSchema = SpecificationBaseSchema.extend({
     updated_at: z.date(),
     product_id: z.number(),
 });
+
+export const SpecificationDeleteResponseSchema = z.object({
+    success: z.boolean(),
+    detail: z.string(),
+});

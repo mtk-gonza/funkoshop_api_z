@@ -24,11 +24,11 @@ export function mapperColumns(columns, options = {}) {
             allowNull: col.allowNull,
             primaryKey: col.primaryKey || false,
             autoIncrement: col.autoIncrement || false,
-            defaultValue: col.defaultValue
-                ? (col.defaultValue === 'CURRENT_TIMESTAMP'
-                    ? (forMigration ? Sequelize.literal('CURRENT_TIMESTAMP') : DataTypes.NOW)
-                    : col.defaultValue)
-                : undefined,
+            defaultValue: !col.defaultValue
+            ? undefined
+            : col.defaultValue === 'CURRENT_TIMESTAMP'
+                ? Sequelize.literal('CURRENT_TIMESTAMP')
+                : col.defaultValue,
             unique: col.unique || false
         };
     }

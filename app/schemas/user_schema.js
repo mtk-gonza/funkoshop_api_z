@@ -32,5 +32,6 @@ export const UserResponseSchema = UserBaseSchema.extend({
 });
 
 export const UserDeleteResponseSchema = z.object({
+    success: z.boolean(),
     detail: z.string(),
 });

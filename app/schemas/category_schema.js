@@ -14,3 +14,8 @@ export const CategoryResponseSchema = CategoryBaseSchema.extend({
     created_at: z.date(),
     updated_at: z.date()
 });
+
+export const CategoryDeleteResponseSchema = z.object({
+    success: z.boolean(),
+    detail: z.string(),
+});

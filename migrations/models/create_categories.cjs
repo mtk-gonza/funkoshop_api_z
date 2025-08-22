@@ -2,8 +2,8 @@
 
 module.exports = {
     async up(queryInterface, Sequelize) {
-        const { CATEGORY_COLUMNS } = await import('./../../app/adapters/persistence/columns/category_columns.js');
-        const { mapperColumns } = await import('./../../app/core/utils/mapper_columns.js');
+        const { CATEGORY_COLUMNS } = await import('../../app/adapters/persistence/columns/category_columns.js');
+        const { mapperColumns } = await import('../../app/core/utils/mapper_columns.js');
 
         const mappedColumns = mapperColumns(CATEGORY_COLUMNS, { forMigration: true });
 

@@ -16,3 +16,8 @@ export const LicenceResponseSchema = LicenceBaseSchema.extend({
     created_at: z.date(),
     updated_at: z.date()
 });
+
+export const LicenceDeleteResponseSchema = z.object({
+    success: z.boolean(),
+    detail: z.string(),
+});

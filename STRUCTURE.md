@@ -2,6 +2,15 @@ funkoshop_api_z/
 ├── app/                                # Código de aplicación principal
 │   ├── adapters/                       # Adaptadores
 │   │   ├── api/                        # Entrada: API REST
+│   │   │   ├── controllers/
+│   │   │   │   ├── auth_controller.js
+│   │   │   │   ├── category_controller.js
+│   │   │   │   ├── image_controller.js
+│   │   │   │   ├── licence_controller.js
+│   │   │   │   ├── product_controller.js
+│   │   │   │   ├── product_spec_controller.js
+│   │   │   │   └── user_controller.js
+│   │   │   │
 │   │   │   ├── routers/
 │   │   │   │   ├── auth_router.js
 │   │   │   │   ├── category_router.js
@@ -48,7 +57,8 @@ funkoshop_api_z/
 │   │   │   ├── user_entity.js
 │   │   │   └── role_entity.js
 │   │   │
-│   │   ├── enums/                      # Simulando emun con Object.freeze                      
+│   │   ├── enums/                      # Simulando emun con Object.freeze
+│   │   │   ├── data_type.js                      
 │   │   │   ├── entity_type.js
 │   │   │   ├── image_type.js
 │   │   │   └── role_type.js
@@ -85,40 +95,51 @@ funkoshop_api_z/
 │   │   └── utils/                  
 │   │       ├── jwt_handler.js
 │   │       ├── logger.js
+│   │       ├── mapper_columns.js       # Helper para mapear columanas para models y migrations
 │   │       ├── password_utils.js
 │   │       └── role_handler.js
 │   │
-│   ├── schemas/                        # joi schemas (request/response)
-│   │   ├── auth_schema.js
-│   │   ├── category_schema.js
-│   │   ├── image_schema.js
-│   │   ├── licence_schema.js
-│   │   ├── product_schema.js
-│   │   ├── product_spec_schema.js
-│   │   ├── role_schema.js
-│   │   └── user_schema.js
-│   │
-│   └── seeds/                          # Scripts de carga inicial de datos
-│       ├── data/
-│       │   ├── categories_data.js 
-│       │   ├── licence_data.js 
-│       │   ├── products_data.js 
-│       │   ├── roles_data.js 
-│       │   └── users_data.js 
-│       │     
-│       ├── seeders/
-│       │   ├── categories_seeder.js 
-│       │   ├── licence_seeder.js 
-│       │   ├── products_seeder.js 
-│       │   ├── roles_seeder.js 
-│       │   └── users_seeder.js 
-│       │
-│       └── seeder_handler.js
+│   └── schemas/                        # joi schemas (request/response)
+│       ├── auth_schema.js
+│       ├── category_schema.js
+│       ├── image_schema.js
+│       ├── licence_schema.js
+│       ├── product_schema.js
+│       ├── product_spec_schema.js
+│       ├── role_schema.js
+│       └── user_schema.js
+│   
+├── migrations/ 
+│   ├── models
+│   │   ├── create-castegories.cjs
+│   │   ├── create-images.cjs
+│   │   ├── create-licences.cjs
+│   │   ├── create-products.cjs
+│   │   ├── create-roles.cjs
+│   │   ├── create-user-roles.cjs
+│   │   └── create-users.cjs 
+│   │ 
+│   ├── seeders
+│   │   ├── data
+│   │   │   ├── categories_data.js
+│   │   │   ├── licences_data.js
+│   │   │   ├── products_data.js
+│   │   │   ├── roles_data.js
+│   │   │   └── users_data.js
+│   │   │
+│   │   ├── categories_seeder.cjs
+│   │   ├── licences_seeder.cjs
+│   │   ├── products_seeder.cjs
+│   │   ├── roles_seeder.cjs
+│   │   └── users_seeder.cjs
+│   │ 
+│   └── config.json      
 │
 ├── uploads/ 
 │
 ├── .env                                # Variables de entorno
 ├── .gitignore
+├── .sequelizerc
 ├── main.js                             # Punto de entrada (crea APP, incluye routers, etc.)
 ├── package-lock.json
 ├── package.json

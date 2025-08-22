@@ -40,6 +40,6 @@ export class CategoryUseCases {
     async deleteCategory(id) {
         const deleted = await this.categoryRepository.delete(id);
         if (!deleted) throw new Error('Category not found');
-        return deleted;
+        return { detail: 'Category deleted' };
     }
 }
